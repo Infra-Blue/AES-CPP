@@ -35,9 +35,11 @@ inline void str_xor(char *left, char *right)
 }
 
 
-inline int gf_mat_mul(u_int8_t c0, u_int8_t c1, u_int8_t c2, u_int8_t c3)
+inline u_int8_t gf_mul(u_int8_t mat_elem, u_int8_t b)
 {
-
+    if(mat_elem == 0x01)
+        return b;
+    return (b << 1) ^ ((0x80 & b > 0) * 0x1B) ^ ((mat_elem > 0x02) * b);
 }
 
 
