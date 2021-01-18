@@ -2,8 +2,9 @@
 #include <algorithm>
 
 
-// Fixed Numerical Data
-u_int8_t message[17] = "0123456789abcdef", key[17] = "0f1571c947d9e859",
+/// Fixed Numerical Data ///
+u_int8_t 
+message[17] = "0123456789abcdef", key[17] = "0f1571c947d9e859",
 s_box[256] = {
     0x63u, 0x7Cu, 0x77u, 0x7Bu, 0xF2u, 0x6Bu, 0x6Fu, 0xC5u, 0x30u, 0x01u, 0x67u, 0x2Bu, 0xFEu, 0xD7u, 0xABu, 0x76u,
     0xCAu, 0x82u, 0xC9u, 0x7Du, 0xFAu, 0x59u, 0x47u, 0xF0u, 0xADu, 0xD4u, 0xA2u, 0xAFu, 0x9Cu, 0xA4u, 0x72u, 0xC0u,
@@ -24,14 +25,16 @@ s_box[256] = {
 }, 
 forward_mat[16] = {0x02u, 0x03u, 0x01u, 0x01u, 0x01u, 0x02u, 0x03u, 0x01u, 0x01u, 0x01u, 0x02u, 0x03u, 0x03u, 0x01u, 0x01u, 0x02u}; 
     
-u_int32_t r_con[10] = {0x01000000, 0x02000000, 0x04000000, 0x08000000, 0x10000000, 0x20000000, 0x40000000, 0x80000000, 0x1B000000, 0x36000000}; 
+u_int32_t 
+r_con[10] = {0x01000000, 0x02000000, 0x04000000, 0x08000000, 0x10000000, 0x20000000, 0x40000000, 0x80000000, 0x1B000000, 0x36000000}, 
+w[44];
 
 
-// Handy Functions
-inline void str_xor(char *left, char *right) 
+/// Handy Functions ///
+inline void str_xor(u_int8_t *left, u_int32_t *right) 
 {
     for(int i = 0; i < 16; ++i)
-        left[i] ^= right[i]; 
+        left[i] ^= ((u_int8_t*)right)[i]; 
 }
 
 
@@ -45,5 +48,8 @@ inline u_int8_t gf_mul(u_int8_t mat_elem, u_int8_t b)
 
 int main()
 {
+    //// KEY SCHEDULE ///
+    for(int i = 0; i < 44; ++i) {
 
+    }
 }
