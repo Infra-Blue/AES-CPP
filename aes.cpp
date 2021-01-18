@@ -31,7 +31,7 @@ w[44];
 
 
 /// Handy Functions ///
-inline void str_xor(u_int8_t *left, u_int32_t *right) 
+inline void block_xor(u_int8_t *left, u_int32_t *right) 
 {
     for(int i = 0; i < 16; ++i)
         left[i] ^= ((u_int8_t*)right)[i]; 
@@ -50,6 +50,10 @@ int main()
 {
     //// KEY SCHEDULE ///
     for(int i = 0; i < 44; ++i) {
+        if(i < 4) {
 
+        } else {
+
+        }
     }
 }
