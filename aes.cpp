@@ -1,4 +1,3 @@
-#include <iostream>
 #include <algorithm>
 
 
@@ -77,7 +76,7 @@ int main()
             key_word[i] = key_word[i - 4] ^ key_word[i - 1];  
     }
 
-    /// INITIAL ADD_KEY ///
+    /// INITIAL KEY ADDITION ///
     block_xor(message, key_word);
 
     /// 10 ROUNDS ///
