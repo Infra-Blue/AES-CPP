@@ -50,12 +50,14 @@ inline u_int8_t gf_mul(u_int8_t mat_elem, u_int8_t b)
 }
 
 
-inline u_int32_t root_word(u_int32_t word) {
+inline u_int32_t root_word(u_int32_t word) 
+{
    return (word << 8) + (word >> 24);  
 }
 
 
-inline u_int32_t sub_word(u_int32_t word) {
+inline u_int32_t sub_word(u_int32_t word) 
+{
     for(int i = 0; i < 4; ++i) {
         u_int8_t &block = *((u_int8_t*)&word + i);
         block = s_box[block];
